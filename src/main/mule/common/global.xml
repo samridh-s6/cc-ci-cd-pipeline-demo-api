@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	
+	<http:listener-config name="http-listener-config" doc:name="HTTP Listener config" doc:id="3f9e106b-0d64-4e50-b308-3789edebe9ad" >
+		<http:listener-connection host="${http.host}" port="${http.port}" readTimeout="${http.read-timeout}" />
+
+	
+</http:listener-config>
+	<configuration-properties
+		doc:name="configuration-properties"
+		doc:id="16cf528f-3e3d-45aa-91b7-4d9b2c9a8356"
+		file="properties/config-${mule.env}.yaml"
+		doc:description="Environment Specific" />
+	
+	<configuration-properties
+		doc:name="configuration-properties"
+		doc:id="67d938b1-35a2-4d53-a02b-a68882f1465f"
+		file="properties\common\common.yaml"
+		doc:description="Common Properties" />
+		
+	<global-property doc:name="Global Property"
+		doc:id="2be5960a-5ef8-4a55-a8fa-5c5ee2d93527" name="mule.key"
+		value="1111222233334444" />
+	<global-property doc:name="Global Property" doc:id="18ebb11f-fe60-4dee-b951-b46eeb1e3681" name="mule.env" value="local" />
+</mule>

@@ -1,0 +1,10 @@
+# Common Configuration
+
+# Listener Configuration
+http:
+  host: "0.0.0.0"
+  read-timeout: "30000"
+  port: "8081"
+  private:
+    port: "8091"
+    
