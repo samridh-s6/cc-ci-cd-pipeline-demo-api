@@ -1,0 +1,11 @@
+<settings>
+	<servers>
+		<server>
+			<id>anypoint-exchange-v3</id>
+			<username>~~~Client~~~</username>
+			<password>${connectedAppClientId}~?~${connectedAppClientSecret}</password>
+		</server>
+	</servers>
+</settings>
+
+
