@@ -91,9 +91,7 @@ jobs:
       - name: "Set Environment Configuration"
         id: set_vars
         run: |
-          # ---
           # DEV values are now set to your exact specification
-          # ---
           if [ "${{ inputs.environment }}" == "DEV" ]; then
             echo "TARGET_NAME=Cloudhub-US-East-2" >> $GITHUB_OUTPUT
             echo "REPLICAS=1" >> $GITHUB_OUTPUT
@@ -101,9 +99,7 @@ jobs:
             echo "APP_NAME=cc-ci-cd-pipeline-demo-api-v1-dev" >> $GITHUB_OUTPUT
             echo "RELEASE_CHANNEL=LTS" >> $GITHUB_OUTPUT
 
-          # ---
-          # You can update STAGE and PROD later when ready
-          # ---
+          # We can update STAGE and PROD later when ready
           elif [ "${{ inputs.environment }}" == "STAGE" ]; then
             echo "TARGET_NAME=Your-STAGE-Target-Name" >> $GITHUB_OUTPUT
             echo "REPLICAS=1" >> $GITHUB_OUTPUT
